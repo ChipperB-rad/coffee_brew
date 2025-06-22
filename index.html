@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<a class="btn btn-primary mb-3" href="{{ url_for('add_brew') }}">Add New Brew</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Roast</th>
+            <th>Method</th>
+            <th>Rating</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for brew in brews %}
+        <tr>
+            <td>{{ brew.date }}</td>
+            <td>{{ brew.name }}</td>
+            <td>{{ brew.roast }}</td>
+            <td>{{ brew.method }}</td>
+            <td>{{ brew.rating }}</td>
+            <td>{{ brew.notes }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">
+    <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input type="date" class="form-control" id="date" name="date" required>
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Coffee Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="roast" class="form-label">Roast Type</label>
+        <select class="form-control" id="roast" name="roast" required>
+            <option value="Light">Light</option>
+            <option value="Medium">Medium</option>
+            <option value="Dark">Dark</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="method" class="form-label">Preferred Brewing Method</label>
+        <input type="text" class="form-control" id="method" name="method" placeholder="e.g. Espresso, Pour Over, French Press" required>
+    </div>
+    <div class="mb-3">
+        <label for="rating" class="form-label">Rating (1-10)</label>
+        <input type="number" class="form-control" id="rating" name="rating" min="1" max="10" required>
+    </div>
+    <div class="mb-3">
+        <label for="notes" class="form-label">Notes</label>
+        <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success">Add Brew</button>
+</form>
+{% endblock %}
